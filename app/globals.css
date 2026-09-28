@@ -1,0 +1,380 @@
+@import "tailwindcss";
+
+/*
+  Sirfa visual system
+  -------------------
+  Ground: paper. Text: ink. Action: copper, used sparingly.
+  Section tones shift the ground. They do not add decoration.
+
+  Radius
+    0     surfaces, images, sections, cards, badges
+    2px   buttons and checks only  (--radius-control)
+
+  Shadow
+    none, except --shadow-overlap on a photograph that sits
+    in front of another element
+
+  Section spacing
+    sm   2.5rem on a phone, 5rem from tablet
+    md   3rem on a phone, 6.5rem from tablet
+    lg   3.5rem on a phone, 8.5rem from tablet
+
+  Containers
+    prose  40rem
+    page   72rem
+    wide   84rem
+*/
+
+:root {
+  --muted: var(--color-ink-soft);
+  --rule: var(--color-line);
+  --eyebrow: var(--color-ink-soft);
+  --container-prose: 40rem;
+  --container-page: 72rem;
+  --container-wide: 84rem;
+  --section-sm: 3.5rem;
+  --section-md: 4rem;
+  --section-lg: 5rem;
+}
+
+@theme {
+  --color-ink: #161411;
+  --color-ink-soft: #3f3a34;
+  --color-ink-faint: #6b645c;
+  --color-paper: #f3f0e8;
+  --color-paper-muted: #cfc6b8;
+  --color-stone: #e7e1d6;
+  --color-stone-deep: #d4cdc0;
+  --color-olive: #24312a;
+  --color-olive-deep: #1a2420;
+  --color-copper: #8c4a32;
+  --color-copper-deep: #6e3824;
+  --color-line: rgb(22 20 17 / 0.16);
+  --color-line-strong: rgb(22 20 17 / 0.32);
+  --color-control-line: #797772;
+  --color-line-inverse: rgb(243 240 232 / 0.2);
+  --color-danger: #8c2f2f;
+
+  --radius-control: 2px;
+
+  --shadow-overlap: 0 22px 50px rgb(22 20 17 / 0.16);
+
+  --text-display: clamp(3rem, 7vw, 6.25rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-headline: clamp(2.15rem, 4vw, 3.5rem);
+  --text-headline--line-height: 1.05;
+  --text-headline--letter-spacing: -0.025em;
+
+  --text-title: clamp(1.5rem, 2vw, 2rem);
+  --text-title--line-height: 1.15;
+  --text-title--letter-spacing: -0.02em;
+
+  --text-subhead: 1.25rem;
+  --text-subhead--line-height: 1.35;
+  --text-subhead--letter-spacing: -0.015em;
+
+  --text-lede: clamp(1.2rem, 1.6vw, 1.45rem);
+  --text-lede--line-height: 1.4;
+  --text-lede--letter-spacing: -0.015em;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.16em;
+}
+
+@theme inline {
+  --font-sans: var(--font-outfit), "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-padding-top: 5rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-outfit), "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-feature-settings: "kern" 1, "liga" 1;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-copper);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+[data-tone="ink"] :focus-visible,
+[data-tone="olive"] :focus-visible {
+  outline-color: var(--color-paper);
+}
+
+[data-tone="paper"] {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  --muted: var(--color-ink-soft);
+  --rule: var(--color-line);
+  --eyebrow: var(--color-ink-soft);
+}
+
+[data-tone="stone"] {
+  background-color: var(--color-stone);
+  color: var(--color-ink);
+  --muted: var(--color-ink-soft);
+  --rule: var(--color-line);
+  --eyebrow: var(--color-ink-soft);
+}
+
+[data-tone="ink"] {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  --muted: var(--color-paper-muted);
+  --rule: var(--color-line-inverse);
+  --eyebrow: var(--color-paper-muted);
+}
+
+[data-tone="olive"] {
+  background-color: var(--color-olive);
+  color: var(--color-paper);
+  --muted: var(--color-paper-muted);
+  --rule: var(--color-line-inverse);
+  --eyebrow: var(--color-paper-muted);
+}
+
+@media (max-width: 767px) {
+  .text-display {
+    font-size: clamp(2.25rem, 9.5vw, 2.85rem);
+    line-height: 0.98;
+  }
+
+  .text-headline {
+    font-size: clamp(1.7rem, 6.2vw, 2.15rem);
+    line-height: 1.08;
+  }
+}
+
+.field-check {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-control);
+  background: transparent;
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+}
+
+.field-check:checked {
+  background: var(--color-copper);
+  border-color: var(--color-copper);
+}
+
+.field-check:checked::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.22rem;
+  border-left: 1.5px solid var(--color-paper);
+  border-bottom: 1.5px solid var(--color-paper);
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 70;
+  transform: translateY(-200%);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: 0.5rem 0.75rem;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+dialog.site-menu {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+dialog.site-menu::backdrop {
+  background: transparent;
+}
+
+/*
+  Motion
+  ------
+  Opacity and translate only. Nothing loops. Nothing on scroll position.
+  A page settles. A menu fades. A photograph arrives. An accordion opens.
+  A figure counts only when the value is a whole number.
+*/
+
+:root {
+  --motion-fast: 160ms;
+  --motion-base: 280ms;
+  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes page-enter {
+  from {
+    translate: 0 6px;
+  }
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    translate: 0 4px;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@keyframes image-in {
+  from {
+    scale: 1.015;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+.page-enter {
+  animation: page-enter var(--motion-base) var(--motion-ease);
+}
+
+@media (min-width: 1024px) {
+  .hero-stage {
+    padding-bottom: 2.5rem !important;
+  }
+
+  .hero-photo {
+    translate: 0 5.5rem;
+  }
+}
+
+.menu-in {
+  animation: fade-in var(--motion-fast) var(--motion-ease);
+}
+
+.panel-in {
+  animation: panel-in var(--motion-fast) var(--motion-ease);
+}
+
+.image-reveal {
+  animation: image-in 420ms var(--motion-ease);
+}
+
+.nav-mark {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: color var(--motion-fast) var(--motion-ease), background-size var(--motion-base) var(--motion-ease);
+}
+
+.nav-mark[aria-current="page"] {
+  background-size: 100% 1px;
+}
+
+.motion-control svg {
+  transition: translate var(--motion-fast) var(--motion-ease);
+}
+
+.discover {
+  transition: background-color var(--motion-fast) var(--motion-ease);
+}
+
+.field-check {
+  transition: background-color var(--motion-fast) var(--motion-ease), border-color var(--motion-fast) var(--motion-ease);
+}
+
+@supports (interpolate-size: allow-keywords) {
+  .disclose {
+    interpolate-size: allow-keywords;
+  }
+
+  .disclose::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height var(--motion-base) var(--motion-ease),
+      content-visibility var(--motion-base) allow-discrete;
+  }
+
+  .disclose[open]::details-content {
+    height: auto;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .nav-mark:hover {
+    background-size: 100% 1px;
+  }
+
+  .motion-control:hover svg {
+    translate: 3px 0;
+  }
+
+  .discover:hover {
+    background-color: rgb(22 20 17 / 0.035);
+  }
+
+  .image-frame:hover img {
+    scale: 1.02;
+    transition: scale 500ms var(--motion-ease);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
