@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/components/ui/link";
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { usePathname } from "next/navigation";
 import { isNavActive, mainNav, site } from "@/content/site";
 import { Button } from "@/components/ui/button";
@@ -47,7 +47,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!panel) return;
-    const onKey = (event: KeyboardEvent) => {
+    const onKey = (event: globalThis.KeyboardEvent) => {
       if (event.key !== "Escape") return;
       const current = panel;
       closingPanel.current = true;
@@ -66,7 +66,7 @@ export function SiteHeader() {
     dialogRef.current?.close();
   }
 
-  function trapMenuTab(event: KeyboardEvent<HTMLDialogElement>) {
+  function trapMenuTab(event: ReactKeyboardEvent<HTMLDialogElement>) {
     if (event.key !== "Tab") return;
     const dialog = dialogRef.current;
     if (!dialog) return;
