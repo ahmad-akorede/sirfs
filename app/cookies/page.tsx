@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 export const metadata = pageMetadata({
   title: "Cookies",
   description:
-    "Sirfa does not set an analytics or advertising cookie. Any cookie added later will be named here first.",
+    "Sirfa Empowerment Initiative does not set an analytics or advertising cookie. Any cookie added later will be named here first.",
   path: "/cookies",
 });
 

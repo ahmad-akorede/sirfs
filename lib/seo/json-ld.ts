@@ -25,7 +25,7 @@ export function crumbs(...items: Crumb[]): Crumb[] {
   return [{ name: "Home", path: "/" }, ...items];
 }
 
-/** Name and URL only. Address, telephone, and email are added when the office confirms them. */
+/** Name, address, telephone, and email. Licence details stay off this record. */
 export function organizationJsonLd(): JsonLdNode {
   const data: JsonLdNode = {
     "@context": "https://schema.org",

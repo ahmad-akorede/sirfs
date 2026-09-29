@@ -74,7 +74,7 @@ export function ProductIndex({ products }: { products: ProductSummary[] }) {
             href={product.href}
             className="discover group grid gap-3 py-7 md:grid-cols-12 md:items-baseline md:gap-6"
           >
-            <span className="font-serif text-small text-copper tabular-nums md:col-span-1">
+            <span className="font-sans text-small font-semibold text-olive tabular-nums md:col-span-1">
               {String(index + 1).padStart(2, "0")}
             </span>
             <span className="font-serif text-title font-medium md:col-span-4">{product.name}</span>

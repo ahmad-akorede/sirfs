@@ -11,7 +11,7 @@ import { Display, Eyebrow, Lede } from "@/components/ui/type";
 export const metadata = pageMetadata({
   title: "Apply for a Loan",
   description:
-    "Start a Sirfa loan application in five steps. The page does not send it, and it does not approve it.",
+    "Start a Sirfa Empowerment Initiative loan application in five steps. The page does not send it, and it does not approve it.",
   path: "/apply",
 });
 

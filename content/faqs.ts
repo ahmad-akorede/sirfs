@@ -7,7 +7,7 @@ export const loanFaqs = [
   {
     question: "Where are the rates, limits, and fees?",
     answer:
-      "They are not on this page. Each loan will show them when Sirfa confirms the figures.",
+      "They are not on this page. Each loan will show them when Sirfa Empowerment Initiative confirms the figures.",
   },
   {
     question: "What makes someone eligible?",

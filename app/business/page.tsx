@@ -61,7 +61,7 @@ export default function BusinessPage() {
                 width={864}
                 height={1152}
                 ratio="portrait"
-                overlap="copper"
+                overlap="none"
                 priority
                 caption="A shop at the counter. Not a customer portrait."
               />
@@ -118,7 +118,7 @@ export default function BusinessPage() {
                 key={scenario.title}
                 className="grid gap-3 border-t border-[var(--rule)] py-8 md:grid-cols-12 md:items-baseline md:gap-6"
               >
-                <span className="font-serif text-small text-copper tabular-nums md:col-span-1">
+                <span className="font-sans text-small font-semibold text-olive tabular-nums md:col-span-1">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-serif text-title font-medium md:col-span-4">{scenario.title}</h3>

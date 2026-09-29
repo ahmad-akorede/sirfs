@@ -12,7 +12,7 @@ import { Display, Eyebrow, Heading, Lede, Text } from "@/components/ui/type";
 export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "The Sirfa office, hours, and a message. Telephone, email, and WhatsApp appear when they are confirmed.",
+    "The Sirfa Empowerment Initiative office in Geri-Alimi, the telephone, the email, and a message.",
   path: "/contact",
 });
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 <Channel key={channel.label} {...channel} tall />
               ))}
             </div>
-            <Lede className="mt-8 lg:mt-6">The address is confirmed before a map is shown.</Lede>
+            <Lede className="mt-8 lg:mt-6">The office is in Geri-Alimi. Call or write during the hours below.</Lede>
             <address className="mt-10 font-serif text-title font-medium not-italic">
               {site.address.map((line) => (
                 <span key={line} className="block">
@@ -135,7 +135,7 @@ function Channel({
   const body = (
     <>
       <span className="font-sans text-eyebrow uppercase text-[var(--eyebrow)]">{label}</span>
-      <span className="text-right font-serif text-subhead font-medium">{value}</span>
+      <span className="min-w-0 text-right font-sans text-small font-semibold break-all sm:text-subhead">{value}</span>
     </>
   );
 
@@ -158,11 +158,11 @@ function OfficeMap({ query }: { query: string | null }) {
   if (!query) {
     return (
       <div className="relative aspect-[16/10] bg-stone">
-        <div aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-copper" />
+        <div aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-olive" />
         <div className="flex h-full flex-col justify-between p-6 md:p-10">
           <p className="font-sans text-eyebrow uppercase text-ink-soft">Map</p>
-          <p className="max-w-[16ch] font-serif text-title font-medium text-ink">
-            Added when the address is confirmed.
+          <p className="max-w-[18ch] font-sans text-title font-semibold text-ink">
+            The address is listed beside this space.
           </p>
         </div>
       </div>

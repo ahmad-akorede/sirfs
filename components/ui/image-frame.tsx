@@ -74,28 +74,22 @@ export function ImageFrame({
                 decoding={priority ? "auto" : "async"}
                 fetchPriority={priority ? "high" : "low"}
                 className={cn(
-                  "h-full w-full object-cover object-[center_22%] saturate-[0.78] contrast-[1.04]",
+                  "h-full w-full object-cover object-[center_22%]",
                   !priority && "image-reveal",
                 )}
               />
             </picture>
           ) : (
             <div className="absolute inset-0 bg-stone">
-              <div className="absolute inset-y-0 left-0 w-1 bg-copper" aria-hidden="true" />
+              <div className="absolute inset-y-0 left-0 w-1 bg-olive" aria-hidden="true" />
               <div className="flex h-full flex-col justify-between p-6">
                 <span className="font-sans text-eyebrow uppercase text-ink-soft">Photograph</span>
-                <span className="max-w-[12ch] font-serif text-title font-medium text-ink">
+                <span className="max-w-[12ch] font-sans text-title font-semibold text-ink">
                   To be commissioned
                 </span>
               </div>
             </div>
           )}
-          {src ? (
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-copper/10 mix-blend-multiply"
-            />
-          ) : null}
         </div>
       </div>
       {caption ? (

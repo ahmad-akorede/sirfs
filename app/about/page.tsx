@@ -30,7 +30,7 @@ import { Display, Eyebrow, Heading, Lede, Text } from "@/components/ui/type";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Sirfa lends to salary earners, traders, and small businesses. History, people, and the licence are published when confirmed.",
+    "Sirfa Empowerment Initiative lends to salary earners, traders, and small businesses. History, people, and the licence are published when confirmed.",
   path: "/about",
 });
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 key={`${value.name}-${index}`}
                 className="grid gap-3 border-t border-[var(--rule)] py-8 md:grid-cols-12 md:items-baseline md:gap-6"
               >
-                <span className="font-serif text-small text-copper tabular-nums md:col-span-1">
+                <span className="font-sans text-small font-semibold text-olive tabular-nums md:col-span-1">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="font-serif text-title font-medium md:col-span-4">{value.name}</span>
@@ -134,7 +134,7 @@ export default function AboutPage() {
         <Container width="wide">
           <div className="grid items-end gap-14 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <ImageFrame ratio="portrait" overlap="copper" caption={leadership.photoCaption} />
+              <ImageFrame ratio="portrait" overlap="none" caption={leadership.photoCaption} />
             </div>
             <div className="lg:col-span-6 lg:col-start-7">
               <Eyebrow>{leadership.eyebrow}</Eyebrow>
@@ -175,7 +175,7 @@ export default function AboutPage() {
               <li key={`${item.when}-${index}`} className="relative border-l border-[var(--rule)] pb-12 pl-8">
                 <span
                   aria-hidden="true"
-                  className="absolute top-2 left-0 size-2 -translate-x-1/2 bg-copper"
+                  className="absolute top-2 left-0 size-2 -translate-x-1/2 bg-olive"
                 />
                 <p className="font-sans text-eyebrow uppercase text-[var(--eyebrow)]">{item.when}</p>
                 <p className="mt-3 font-serif text-title font-medium">{item.title}</p>
@@ -255,7 +255,14 @@ export default function AboutPage() {
               </address>
               <Text className="mt-4">{site.hours}</Text>
               <Text size="small" className="mt-3">
-                {site.phoneDisplay ?? "Telephone: to be confirmed."}
+                <a href={site.phoneHref} className="underline decoration-current/30 underline-offset-[0.3em]">
+                  {site.phoneDisplay}
+                </a>
+              </Text>
+              <Text size="small" className="mt-2">
+                <a href={`mailto:${site.email}`} className="underline decoration-current/30 underline-offset-[0.3em]">
+                  {site.email}
+                </a>
               </Text>
               <Text size="small" className="mt-2">
                 {locationsCopy.further}

@@ -13,7 +13,7 @@ export function NoteCard({
 
   return (
     <article className={cn("flex h-full flex-col border-t border-[var(--rule)] py-8", featured && "md:pr-10")}>
-      <p className="font-sans text-eyebrow uppercase text-copper">Sample</p>
+      <p className="font-sans text-eyebrow uppercase text-olive">Sample</p>
       <p className="mt-3 font-sans text-eyebrow uppercase text-[var(--eyebrow)]">{topic?.label}</p>
       <h3 className={cn("mt-4 font-serif font-medium", featured ? "text-headline" : "text-title")}>
         <Link href={note.href} className="hover:underline">

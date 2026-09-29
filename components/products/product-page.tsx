@@ -96,7 +96,7 @@ export function ProductPage({
                   key={benefit}
                   className="grid gap-3 border-t border-[var(--rule)] py-5 md:grid-cols-12 md:gap-6"
                 >
-                  <span className="font-serif text-small text-copper tabular-nums md:col-span-1">
+                  <span className="font-sans text-small font-semibold text-olive tabular-nums md:col-span-1">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="font-sans text-body md:col-span-10">{benefit}</span>

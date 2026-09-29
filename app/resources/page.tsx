@@ -54,7 +54,7 @@ export default function ResourcesPage() {
           <ol className="mt-14 border-b border-[var(--rule)]">
             {resourceTopics.map((topic, index) => (
               <li key={topic.id} id={topic.id} className="grid scroll-mt-28 gap-3 border-t border-[var(--rule)] py-7 md:grid-cols-12 md:items-baseline md:gap-6">
-                <span className="font-serif text-small text-copper tabular-nums md:col-span-1">
+                <span className="font-sans text-small font-semibold text-olive tabular-nums md:col-span-1">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-serif text-title font-medium md:col-span-4">{topic.label}</h3>

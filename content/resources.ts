@@ -117,7 +117,7 @@ export const faqGroups = [
       {
         question: "Where are the rates, limits, and fees?",
         answer:
-          "They are not on this site until Sirfa confirms the figures.",
+          "They are not on this site until Sirfa Empowerment Initiative confirms the figures.",
       },
     ],
   },
@@ -220,7 +220,7 @@ export const faqGroups = [
       {
         question: "How do I reach a person?",
         answer:
-          "The Contact page holds the office, the hours, and a message. Telephone and email will appear there when they are confirmed.",
+          "The Contact page holds the office address, the telephone, the email, the hours, and a message.",
       },
     ],
   },

@@ -18,7 +18,7 @@ export function LoanCatalogue({
             {group.loans.map((loan, index) => (
               <details key={loan.slug} id={loan.slug} className="disclose group scroll-mt-28 border-t border-[var(--rule)]">
                 <summary className="discover grid cursor-pointer list-none gap-3 py-7 md:grid-cols-12 md:items-baseline md:gap-6 [&::-webkit-details-marker]:hidden">
-                  <span className="font-serif text-small text-copper tabular-nums md:col-span-1">
+                  <span className="font-sans text-small font-semibold text-olive tabular-nums md:col-span-1">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="md:col-span-4">

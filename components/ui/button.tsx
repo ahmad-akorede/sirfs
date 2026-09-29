@@ -2,12 +2,13 @@ import { Link } from "@/components/ui/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "inverse" | "quiet";
+type Variant = "primary" | "secondary" | "inverse" | "quiet" | "ghost";
 type Size = "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-copper text-paper hover:bg-copper-deep",
+  primary: "bg-olive text-paper hover:bg-olive-deep",
   secondary: "border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper",
+  ghost: "border border-current bg-transparent text-current hover:bg-white/10",
   inverse: "bg-paper text-ink hover:bg-stone",
   quiet:
     "bg-transparent px-0 text-current underline decoration-current/35 underline-offset-[0.45em] hover:decoration-current",

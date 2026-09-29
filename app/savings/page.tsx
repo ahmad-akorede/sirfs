@@ -252,7 +252,7 @@ function ProductGroup({
             <div className="grid gap-8 md:grid-cols-12">
               <div className="md:col-span-5">
                 {product.placeholder ? (
-                  <p className="font-sans text-eyebrow uppercase text-copper">Placeholder</p>
+                  <p className="font-sans text-eyebrow uppercase text-olive">Placeholder</p>
                 ) : null}
                 <h3 className="mt-3 font-serif text-headline font-medium">{product.name}</h3>
                 <p className="mt-4 max-w-[36ch] font-sans text-body text-[var(--muted)]">{product.summary}</p>

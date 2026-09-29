@@ -12,8 +12,8 @@ export const metadata = pageMetadata({
   title: "Notes",
   description:
     publishedNotes.length > 0
-      ? "Notes from Sirfa on money, business, loans, and savings."
-      : "Sample layouts for Sirfa notes. No piece is published yet.",
+      ? "Notes from Sirfa Empowerment Initiative on money, business, loans, and savings."
+      : "Sample layouts for Sirfa Empowerment Initiative notes. No piece is published yet.",
   path: "/resources/blog",
   index: publishedNotes.length > 0,
   follow: true,

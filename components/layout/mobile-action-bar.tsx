@@ -18,9 +18,9 @@ export function MobileActionBar() {
       </Link>
       <Link
         href={site.applyHref}
-        className="flex h-14 items-center justify-center bg-copper font-sans text-small font-medium text-paper"
+        className="flex h-14 items-center justify-center bg-olive font-sans text-small font-medium text-paper"
       >
-        Apply
+        {site.applyLabel}
       </Link>
     </nav>
   );

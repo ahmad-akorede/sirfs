@@ -6,8 +6,8 @@
 
 export const aboutStory = {
   eyebrow: "The institution",
-  title: "About Sirfa.",
-  lede: "Sirfa lends to salary earners, traders, and small businesses. History, people, and the licence are added here only when they are confirmed.",
+  title: "About Sirfa Empowerment Initiative.",
+  lede: "Sirfa Empowerment Initiative lends to salary earners, traders, and small businesses. History, people, and the licence are added here only when they are confirmed.",
 };
 
 export const whyWeExist = {
@@ -88,9 +88,9 @@ export const inclusion = {
 export const trust = {
   eyebrow: "Trust",
   title: "What you can check.",
-  text: "A licence number, a regulator, and a legal name are printed only from the record. Until then the line stays open.",
+  text: "The institution’s name is published. The licence number and the regulator stay open until they are confirmed.",
   items: [
-    { label: "Legal name", value: "To be confirmed" },
+    { label: "Legal name", value: "Sirfa Empowerment Initiative" },
     { label: "Licence", value: "To be confirmed" },
     { label: "Regulator", value: "To be confirmed" },
     {
@@ -105,5 +105,5 @@ export const locationsCopy = {
   eyebrow: "Locations",
   title: "The office.",
   further: "Further offices: to be published.",
-  mapCaption: "A map is added when the address is confirmed.",
+  mapCaption: "Office photograph: to be commissioned.",
 };

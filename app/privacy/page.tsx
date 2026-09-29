@@ -17,7 +17,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 export const metadata = pageMetadata({
   title: "Privacy",
   description:
-    "What a Sirfa enquiry asks for, what this site does with it today, and which privacy terms are still unpublished.",
+    "What a Sirfa Empowerment Initiative enquiry asks for, what this site does with it today, and which privacy terms are still unpublished.",
   path: "/privacy",
 });
 

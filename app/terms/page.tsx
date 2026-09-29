@@ -11,8 +11,8 @@ import { pageMetadata } from "@/lib/seo/metadata";
 const siteTerms: TrustLine[] = [
   {
     label: "Legal name",
-    value: "To be confirmed",
-    note: "The name that binds the institution, as printed on the licence.",
+    value: "Sirfa Empowerment Initiative",
+    note: "The name supplied for the institution. The licence is still to be confirmed.",
   },
   {
     label: "Governing law",
@@ -29,7 +29,7 @@ const siteTerms: TrustLine[] = [
 export const metadata = pageMetadata({
   title: "Terms",
   description:
-    "The Sirfa website explains the loans. The facility letter is the contract. Governing law is still unpublished.",
+    "The Sirfa Empowerment Initiative website explains the loans. The facility letter is the contract. Governing law is still unpublished.",
   path: "/terms",
 });
 

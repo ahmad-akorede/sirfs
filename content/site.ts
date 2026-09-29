@@ -4,19 +4,19 @@
  */
 
 export const site = {
-  name: "Sirfa",
+  name: "Sirfa Empowerment Initiative",
   description: "Microfinance for salary earners, traders, and small businesses.",
   hours: "Monday to Friday, 8:00–17:00",
-  phoneDisplay: null as string | null,
-  phoneHref: null as string | null,
-  email: null as string | null,
+  phoneDisplay: "0708 264 0524",
+  phoneHref: "tel:+2347082640524",
+  email: "sirfaempowermentinitiative@gmail.com",
   whatsappDisplay: null as string | null,
   whatsappHref: null as string | null,
-  /** A place name or address for the map. Leave null until the office is confirmed. */
+  /** Leave null. A map embed would load a third-party service. The address is published in text. */
   mapQuery: null as string | null,
-  address: ["Office address to be confirmed"] as const,
+  address: ["Opposite NNPC, Princess and Honey Paint Building", "Geri-Alimi"] as const,
   applyHref: "/apply",
-  applyLabel: "Apply for a Loan",
+  applyLabel: "Apply Now",
   contactHref: "/contact",
 };
 
@@ -34,55 +34,42 @@ export type PrimaryNavItem = {
 
 export const mainNav: PrimaryNavItem[] = [
   {
-    label: "Products",
-    href: "/loans",
+    label: "Personal",
+    href: "/loans/personal-loan",
     children: [
-      {
-        label: "Loans",
-        href: "/loans",
-        note: "Salary, trade, purchase orders, invoices, and payroll.",
-      },
-      {
-        label: "Savings",
-        href: "/savings",
-        note: "Money you keep, or set aside. Returns published when confirmed.",
-      },
+      { label: "Personal loan", href: "/loans/personal-loan", note: "A salary, and a personal cost." },
+      { label: "Payroll finance", href: "/loans/payroll-finance", note: "Staff of an employer on the scheme." },
+      { label: "Savings", href: "/savings", note: "Money kept with the institution. Returns when confirmed." },
     ],
   },
   {
     label: "Business",
     href: "/business",
+    children: [
+      { label: "Working capital", href: "/business#working-capital", note: "Stock and the trading cycle." },
+      { label: "Business loan", href: "/loans/business-loan", note: "A firm already trading." },
+      { label: "LPO finance", href: "/loans/lpo-finance", note: "A local purchase order already held." },
+      { label: "Invoice discounting", href: "/loans/invoice-discounting", note: "Cash while an invoice is unpaid." },
+      { label: "Asset financing", href: "/business#asset-financing", note: "Arranged with the office. Terms to be published." },
+    ],
   },
+  { label: "Loans", href: "/loans" },
+  { label: "Savings & Investment", href: "/savings" },
   {
-    label: "About",
+    label: "About Us",
     href: "/about",
     children: [
-      {
-        label: "People",
-        href: "/about/team",
-        note: "Who directs and manages the firm.",
-      },
-      {
-        label: "Corporate information",
-        href: "/about/corporate-information",
-        note: "Licence, ownership, and governance.",
-      },
+      { label: "The institution", href: "/about", note: "Who the credit is for." },
+      { label: "People", href: "/about/team", note: "Directors and managers, when confirmed." },
+      { label: "Corporate information", href: "/about/corporate-information", note: "Licence, ownership, and complaints." },
     ],
   },
   {
     label: "Resources",
     href: "/resources",
     children: [
-      {
-        label: "Answers",
-        href: "/resources/faq",
-        note: "How an application moves, and where terms live.",
-      },
-      {
-        label: "Notes",
-        href: "/resources/blog",
-        note: "Sample layouts until a note is published.",
-      },
+      { label: "Answers", href: "/resources/faq", note: "Loans, repayments, savings, and business." },
+      { label: "Notes", href: "/resources/blog", note: "Published when a piece is written." },
     ],
   },
 ];

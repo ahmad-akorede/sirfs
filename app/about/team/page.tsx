@@ -8,7 +8,7 @@ import { Text } from "@/components/ui/type";
 
 export const metadata = pageMetadata({
   title: "People",
-  description: "The people who direct and manage Sirfa.",
+  description: "The people who direct and manage Sirfa Empowerment Initiative.",
   path: "/about/team",
 });
 

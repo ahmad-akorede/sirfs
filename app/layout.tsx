@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Newsreader, Outfit } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import { site } from "@/content/site";
 import { siteOrigin } from "@/lib/seo/site-url";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
@@ -7,22 +7,11 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
 
-const newsreader = Newsreader({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
-  weight: "500",
-  style: ["normal", "italic"],
-  variable: "--font-newsreader",
-  adjustFontFallback: true,
-  fallback: ["Georgia", "Times New Roman", "serif"],
-  preload: true,
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500"],
-  variable: "--font-outfit",
+  weight: ["400", "500", "600"],
+  variable: "--font-source",
   adjustFontFallback: true,
   fallback: ["Segoe UI", "Roboto", "Helvetica Neue", "sans-serif"],
   preload: true,
@@ -49,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${outfit.variable} h-full antialiased`}
+      className={`${sourceSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <a href="#content" className="skip-link">

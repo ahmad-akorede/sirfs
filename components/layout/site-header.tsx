@@ -88,12 +88,12 @@ export function SiteHeader() {
       <Container width="wide" className="flex h-[4.5rem] items-center justify-between gap-8">
         <Link
           href="/"
-          className="flex h-11 items-center font-serif text-[1.7rem] leading-none font-medium tracking-[-0.03em] text-ink"
+          className="flex h-11 max-w-[10.5rem] shrink-0 items-center font-sans text-[0.9375rem] leading-[1.15] font-semibold tracking-[-0.02em] text-olive"
         >
           {site.name}
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-x-4 xl:gap-x-6 lg:flex" aria-label="Primary">
           {mainNav.map((item) => {
             const active = isNavActive(pathname, item);
             const open = panel === item.label;
@@ -116,8 +116,8 @@ export function SiteHeader() {
                   aria-expanded={item.children ? open : undefined}
                   aria-controls={item.children ? `nav-${item.label.toLowerCase()}` : undefined}
                   className={cn(
-                    "nav-mark inline-flex h-11 items-center font-sans text-small",
-                    active ? "text-ink" : "text-ink-soft hover:text-ink",
+                    "nav-mark inline-flex h-11 items-center font-sans text-[0.8125rem] font-medium whitespace-nowrap",
+                    active ? "text-olive" : "text-ink-soft hover:text-ink",
                   )}
                   onFocus={() => {
                     if (closingPanel.current) return;
@@ -136,7 +136,7 @@ export function SiteHeader() {
                       {item.children.map((child) => (
                         <li key={child.href} className="border-t border-line first:border-t-0">
                           <Link href={child.href} className="block py-4" onClick={() => setPanel(null)}>
-                            <span className="block font-serif text-subhead font-medium text-ink">
+                            <span className="block font-sans text-small font-semibold text-ink">
                               {child.label}
                             </span>
                             <span className="mt-1 block font-sans text-small text-ink-soft">{child.note}</span>
@@ -160,6 +160,12 @@ export function SiteHeader() {
               {site.phoneDisplay}
             </a>
           ) : null}
+          <Link
+            href="/contact"
+            className="font-sans text-[0.8125rem] font-medium text-ink-soft hover:text-ink"
+          >
+            Contact Us
+          </Link>
           <Button href={site.applyHref} size="md">
             {site.applyLabel}
           </Button>
@@ -190,7 +196,7 @@ export function SiteHeader() {
             <Link
               href="/"
               onClick={() => closeMenu("navigate")}
-              className="font-serif text-[1.7rem] leading-none font-medium tracking-[-0.03em]"
+              className="max-w-[16rem] font-sans text-[1.05rem] leading-tight font-semibold tracking-[-0.02em]"
             >
               {site.name}
             </Link>
@@ -211,13 +217,11 @@ export function SiteHeader() {
                     href={item.href}
                     aria-current={isNavActive(pathname, item) ? "page" : undefined}
                     onClick={() => closeMenu("navigate")}
-                    className="block min-h-12 font-serif text-headline font-medium"
+                    className="block min-h-12 font-sans text-title font-semibold"
                   >
                     {item.label}
                   </Link>
-                  <span className="font-sans text-small text-[var(--muted)] tabular-nums">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                    <span className="sr-only">{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 {item.children ? (
                   <ul className="mt-2">
@@ -238,8 +242,11 @@ export function SiteHeader() {
               </div>
             ))}
           </nav>
-          <div className="border-t border-[var(--rule)] px-5 py-4 sm:px-6">
-            <Button href={site.applyHref} size="lg" onClick={() => closeMenu("navigate")}>
+          <div className="flex flex-col gap-3 border-t border-[var(--rule)] px-5 py-4 sm:px-6">
+            <Button href="/contact" variant="ghost" size="lg" onClick={() => closeMenu("navigate")}>
+              Contact Us
+            </Button>
+            <Button href={site.applyHref} variant="inverse" size="lg" onClick={() => closeMenu("navigate")}>
               {site.applyLabel}
             </Button>
           </div>

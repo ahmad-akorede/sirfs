@@ -1,100 +1,129 @@
 import { Link } from "@/components/ui/link";
-import { loans } from "@/content/loans";
-import { legalNav, site } from "@/content/site";
+import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
-import { Eyebrow } from "@/components/ui/type";
 
-const footerLoans = [
-  ...loans.map((loan) => ({ label: loan.name, href: loan.href })),
-  { label: "Savings", href: "/savings" },
-  { label: "Business", href: "/business" },
-];
+const columns = [
+  {
+    title: "Products",
+    links: [
+      { label: "Personal", href: "/loans/personal-loan" },
+      { label: "Business", href: "/business" },
+      { label: "Loans", href: "/loans" },
+      { label: "Savings", href: "/savings" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Leadership", href: "/about/team" },
+      { label: "Corporate information", href: "/about/corporate-information" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Financial education", href: "/resources" },
+      { label: "FAQs", href: "/resources/faq" },
+      { label: "Notes", href: "/resources/blog" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [{ label: "Contact", href: "/contact" }],
+  },
+] as const;
+
+const legal = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Cookies", href: "/cookies" },
+  { label: "Regulatory information", href: "/about/corporate-information" },
+] as const;
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer data-tone="ink">
-      <Container width="wide" className="pt-16 pb-24 md:pt-24 lg:pb-12">
-        <Link
-          href="/"
-          className="block font-serif text-[clamp(3.25rem,16vw,9rem)] leading-[0.82] font-medium tracking-[-0.045em]"
-        >
-          {site.name}
-        </Link>
-
-        <div className="mt-14 grid gap-12 border-t border-[var(--rule)] pt-12 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <Eyebrow>Visit</Eyebrow>
-            <address className="mt-5 font-sans text-body not-italic">
+    <footer data-tone="ink" className="bg-ink text-paper">
+      <Container width="wide" className="pt-16 pb-10 md:pt-20">
+        <div className="grid gap-12 border-b border-[var(--rule)] pb-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Link href="/" className="font-sans text-title font-semibold tracking-[-0.02em]">
+              {site.name}
+            </Link>
+            <p className="mt-4 max-w-[32ch] font-sans text-small text-[var(--muted)]">{site.description}</p>
+            <address className="mt-6 font-sans text-small not-italic text-[var(--muted)]">
               {site.address.map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>
               ))}
-              <span className="mt-4 block text-small text-[var(--muted)]">{site.hours}</span>
+              <span className="mt-3 block">{site.hours}</span>
             </address>
+            <p className="mt-6 max-w-[36ch] font-sans text-small text-[var(--muted)]">
+              Licence and regulator: to be confirmed.
+            </p>
           </div>
 
-          <div className="md:col-span-4">
-            <Eyebrow>Contact</Eyebrow>
-            <ul className="mt-3 font-sans text-body">
-              <li>
-                {site.phoneHref && site.phoneDisplay ? (
-                  <a href={site.phoneHref} className="flex min-h-11 items-center hover:underline">
-                    {site.phoneDisplay}
-                  </a>
-                ) : (
-                  <span>Telephone to be confirmed</span>
-                )}
-              </li>
-              <li>
-                {site.email ? (
-                  <a href={`mailto:${site.email}`} className="flex min-h-11 items-center hover:underline">
-                    {site.email}
-                  </a>
-                ) : (
-                  <span>Email to be confirmed</span>
-                )}
-              </li>
-              <li>
-                <Link href={site.contactHref} className="flex min-h-11 items-center hover:underline">
-                  Send a message
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-4">
-            <Eyebrow>Credit</Eyebrow>
-            <ul className="mt-3 font-sans text-body">
-              {footerLoans.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="flex min-h-11 items-center hover:underline">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-8">
+            {columns.map((column) => (
+              <div key={column.title}>
+                <p className="font-sans text-caption font-semibold tracking-[0.08em] text-[var(--muted)] uppercase">
+                  {column.title}
+                </p>
+                <ul className="mt-4">
+                  {column.links.map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} className="inline-flex min-h-10 items-center font-sans text-small hover:underline">
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                  {column.title === "Company" ? (
+                    <li className="inline-flex min-h-10 items-center font-sans text-small text-[var(--muted)]">
+                      Careers: to be published
+                    </li>
+                  ) : null}
+                  {column.title === "Support" ? (
+                    <>
+                      <li className="inline-flex min-h-10 items-center font-sans text-small text-[var(--muted)]">
+                        Branches: to be published
+                      </li>
+                      <li className="inline-flex min-h-10 items-center font-sans text-small text-[var(--muted)]">
+                        WhatsApp: to be confirmed
+                      </li>
+                      <li>
+                        <a href={site.phoneHref} className="inline-flex min-h-10 items-center font-sans text-small hover:underline">
+                          {site.phoneDisplay}
+                        </a>
+                      </li>
+                      <li>
+                        <a href={`mailto:${site.email}`} className="inline-flex min-h-10 items-center font-sans text-small break-all hover:underline">
+                          {site.email}
+                        </a>
+                      </li>
+                    </>
+                  ) : null}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        <p className="mt-16 max-w-[46ch] font-sans text-small text-[var(--muted)]">
-          Licence, regulator, and legal name: to be confirmed. They will be printed on the{" "}
-          <Link href="/about/corporate-information" className="text-paper underline decoration-current/30 underline-offset-[0.3em]">
-            corporate record
-          </Link>
-          .
-        </p>
-        <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[var(--rule)] pt-6 font-sans text-small text-[var(--muted)]">
-          <span>
+        <div className="flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-small text-[var(--muted)]">
             © {year} {site.name}
-          </span>
-          {legalNav.map((item) => (
-            <Link key={item.label} href={item.href} className="inline-flex min-h-11 items-center hover:text-paper">
-              {item.label}
-            </Link>
-          ))}
+          </p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {legal.map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className="inline-flex min-h-11 items-center font-sans text-small text-[var(--muted)] hover:text-paper">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </footer>

@@ -17,8 +17,8 @@ export const trustLegend =
 export const regulatoryLines: TrustLine[] = [
   {
     label: "Legal name",
-    value: "To be confirmed",
-    note: "The registered name, as it is printed on the licence.",
+    value: "Sirfa Empowerment Initiative",
+    note: "The name supplied for the institution. The licence itself is still to be confirmed.",
   },
   {
     label: "Licence number",
@@ -86,8 +86,8 @@ export const collectedLines: TrustLine[] = [
 export const privacyAwaiting: TrustLine[] = [
   {
     label: "Who is responsible",
-    value: "To be confirmed",
-    note: "The legal name of the institution, and the person to write to about your details.",
+    value: "Sirfa Empowerment Initiative",
+    note: "Write to sirfaempowermentinitiative@gmail.com about your details. A named privacy contact is still to be published.",
   },
   {
     label: "How long an enquiry is kept",
@@ -143,7 +143,7 @@ export const cookieAwaiting: TrustLine[] = [
   {
     label: "Who sets it",
     value: "To be confirmed",
-    note: "Sirfa, or the name of another firm.",
+    note: "Sirfa Empowerment Initiative, or the name of another firm.",
   },
   {
     label: "Purpose",

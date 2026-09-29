@@ -239,7 +239,7 @@ function Progress({ step, onBack }: { step: number; onBack: (step: number) => vo
         {applicationSteps.map((item, index) => {
           const state = index < step ? "done" : index === step ? "current" : "ahead";
           const bar =
-            state === "done" ? "bg-copper" : state === "current" ? "bg-ink" : "bg-[var(--rule)]";
+            state === "done" ? "bg-olive" : state === "current" ? "bg-ink" : "bg-[var(--rule)]";
           return (
             <li key={item.id}>
               <div className={`h-0.5 ${bar}`} />
@@ -249,7 +249,7 @@ function Progress({ step, onBack }: { step: number; onBack: (step: number) => vo
                   onClick={() => onBack(index)}
                   className="mt-2 flex min-h-11 w-full items-center text-left font-sans text-small text-ink underline decoration-current/30 underline-offset-[0.3em]"
                 >
-                  <span className="tabular-nums text-copper">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="tabular-nums text-olive">{String(index + 1).padStart(2, "0")}</span>
                   <span className="sr-only lg:hidden">{item.label}</span>
                   <span className="mt-1 hidden lg:block">{item.label}</span>
                 </button>
@@ -668,10 +668,14 @@ function SupportPanel() {
         {site.hours}
       </Text>
       <Text size="small" className="mt-2">
-        {site.phoneDisplay ?? "Telephone: to be confirmed."}
+        <a href={site.phoneHref} className="underline decoration-current/30 underline-offset-[0.3em]">
+          {site.phoneDisplay}
+        </a>
       </Text>
       <Text size="small" className="mt-2">
-        {site.email ?? "Email: to be confirmed."}
+        <a href={`mailto:${site.email}`} className="break-all underline decoration-current/30 underline-offset-[0.3em]">
+          {site.email}
+        </a>
       </Text>
       <Link
         href={site.contactHref}

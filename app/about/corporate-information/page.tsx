@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = pageMetadata({
   title: "Corporate information",
-  description: "Licence, ownership, and complaints for Sirfa. Unpublished lines stay marked.",
+  description: "Licence, ownership, and complaints for Sirfa Empowerment Initiative. Unpublished lines stay marked.",
   path: "/about/corporate-information",
 });
 

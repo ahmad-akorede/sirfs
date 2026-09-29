@@ -8,7 +8,7 @@ type TypeProps = {
 
 export function Display({ children, className }: TypeProps) {
   return (
-    <h1 className={cn("font-serif text-display font-medium text-balance", className)}>
+    <h1 className={cn("font-sans text-display font-semibold text-balance", className)}>
       {children}
     </h1>
   );
@@ -28,7 +28,7 @@ export function Heading({
 }: TypeProps & { level?: 1 | 2 | 3 | 4 }) {
   const Tag = `h${level}` as const;
   return (
-    <Tag className={cn("font-serif font-medium text-balance", headingClass[level], className)}>
+    <Tag className={cn("font-sans font-semibold text-balance", headingClass[level], className)}>
       {children}
     </Tag>
   );
@@ -36,7 +36,7 @@ export function Heading({
 
 export function Lede({ children, className }: TypeProps) {
   return (
-    <p className={cn("font-serif text-lede italic text-balance", className)}>{children}</p>
+    <p className={cn("font-sans text-lede text-balance text-ink-soft", className)}>{children}</p>
   );
 }
 

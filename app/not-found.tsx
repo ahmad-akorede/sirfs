@@ -6,7 +6,7 @@ import { Heading, Text } from "@/components/ui/type";
 
 export const metadata = pageMetadata({
   title: "Page not found",
-  description: "This address is not a page on the Sirfa site.",
+  description: "This address is not a page on the Sirfa Empowerment Initiative site.",
   path: "/404",
   index: false,
   follow: true,

@@ -31,12 +31,12 @@ export function CtaBand({
         <div className="grid items-end gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <Eyebrow>{eyebrow}</Eyebrow>
-            <h2 className="mt-5 max-w-[14ch] font-serif text-display font-medium text-balance">
+            <h2 className="mt-5 max-w-[22ch] font-sans text-headline font-semibold text-balance">
               {title}
             </h2>
           </div>
           <div className="flex w-full flex-col items-stretch gap-4 sm:items-start md:col-span-4 md:col-start-9">
-            <Button href={actionHref} variant="primary" size="lg">
+            <Button href={actionHref} variant="inverse" size="lg">
               {actionLabel}
               <IconArrowRight />
             </Button>
