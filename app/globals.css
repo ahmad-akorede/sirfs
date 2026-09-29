@@ -236,9 +236,9 @@ dialog.site-menu::backdrop {
 /*
   Motion
   ------
-  Opacity and translate only. Nothing loops. Nothing on scroll position.
-  A page settles. A menu fades. A photograph arrives. An accordion opens.
-  A figure counts only when the value is a whole number.
+  Opacity and translate only. Nothing loops.
+  Content rises as it enters. A menu fades. A photograph settles.
+  An accordion opens. Reduced motion keeps every element still.
 */
 
 :root {
@@ -384,7 +384,17 @@ dialog.site-menu::backdrop {
 }
 
 .rise {
-  animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise-pending {
+    opacity: 0;
+  }
+
+  figure.rise img {
+    animation: image-in 900ms var(--motion-ease) both;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

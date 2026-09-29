@@ -5,6 +5,7 @@ import { siteOrigin } from "@/lib/seo/site-url";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ContentMotion } from "@/components/motion/content-motion";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -50,6 +51,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <MobileActionBar />
+        <ContentMotion />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;var s="h1,h2,h3,p,li,figure,blockquote,form,address,dt,dd,details,.motion-control";function collect(r){return Array.prototype.filter.call(r.querySelectorAll(s),function(el){if(el.closest(".sr-only"))return false;if(el.closest("details")&&el.tagName!=="DETAILS")return false;if(el.parentElement&&el.parentElement.closest(s))return false;return true})}function mark(r){var seen=0,view=window.innerHeight*0.92;collect(r).forEach(function(el){if(el.getAttribute("data-risen")==="1"||el.classList.contains("rise-pending"))return;if(el.getBoundingClientRect().top<view){el.style.animationDelay=Math.min(seen,12)*50+"ms";el.classList.add("rise");el.setAttribute("data-risen","1");seen++}else{var kids=el.parentElement?Array.prototype.filter.call(el.parentElement.children,function(c){return c.matches&&c.matches(s)}):[];var i=Math.max(0,Array.prototype.indexOf.call(kids,el));el.style.animationDelay=Math.min(i,8)*55+"ms";el.classList.add("rise-pending")}})}var main=document.getElementById("content");if(main)mark(main);var footer=document.querySelector("footer");if(footer)mark(footer)})();`,
+          }}
+        />
       </body>
     </html>
   );
