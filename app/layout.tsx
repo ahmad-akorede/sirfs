@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Sans_3 } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { site } from "@/content/site";
 import { siteOrigin } from "@/lib/seo/site-url";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
@@ -7,11 +7,11 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
 
-const sourceSans = Source_Sans_3({
+const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
-  variable: "--font-source",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
   adjustFontFallback: true,
   fallback: ["Segoe UI", "Roboto", "Helvetica Neue", "sans-serif"],
   preload: true,
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sourceSans.variable} h-full antialiased`}
+      className={`${manrope.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <a href="#content" className="skip-link">

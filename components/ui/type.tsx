@@ -8,7 +8,7 @@ type TypeProps = {
 
 export function Display({ children, className }: TypeProps) {
   return (
-    <h1 className={cn("font-sans text-display font-semibold text-balance", className)}>
+    <h1 className={cn("font-sans text-display font-bold text-balance", className)}>
       {children}
     </h1>
   );

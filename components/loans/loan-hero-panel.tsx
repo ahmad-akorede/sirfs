@@ -9,15 +9,10 @@ export function LoanHeroPanel({
   businesses: Loan[];
 }) {
   return (
-    <div className="border border-line bg-stone">
-      <div className="px-5 py-5 md:px-8 md:py-8">
-        <LoanGroup label="For a person" loans={individuals} />
-        <div className="mt-8">
-          <LoanGroup label="For a business" loans={businesses} />
-        </div>
-        <p className="mt-6 border-t border-line pt-4 font-sans text-small text-ink-soft">
-          Rates, limits, and fees: to be published.
-        </p>
+    <div>
+      <LoanGroup label="For a person" loans={individuals} />
+      <div className="mt-10">
+        <LoanGroup label="For a business" loans={businesses} />
       </div>
     </div>
   );

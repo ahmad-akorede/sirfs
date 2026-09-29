@@ -17,25 +17,31 @@ export const metadata = pageMetadata({
 });
 
 const channels = [
-  {
-    label: "Telephone",
-    value: site.phoneDisplay ?? "To be confirmed",
-    href: site.phoneHref,
-    reach: true,
-  },
-  {
-    label: "WhatsApp",
-    value: site.whatsappDisplay ?? "To be confirmed",
-    href: site.whatsappHref,
-    reach: true,
-  },
-  {
-    label: "Email",
-    value: site.email ?? "To be confirmed",
-    href: site.email ? `mailto:${site.email}` : null,
-    reach: false,
-  },
-];
+  site.phoneDisplay
+    ? {
+        label: "Telephone",
+        value: site.phoneDisplay,
+        href: site.phoneHref,
+        reach: true,
+      }
+    : null,
+  site.whatsappDisplay
+    ? {
+        label: "WhatsApp",
+        value: site.whatsappDisplay,
+        href: site.whatsappHref,
+        reach: true,
+      }
+    : null,
+  site.email
+    ? {
+        label: "Email",
+        value: site.email,
+        href: `mailto:${site.email}`,
+        reach: false,
+      }
+    : null,
+].filter((channel) => channel !== null);
 
 const reach = channels.filter((channel) => channel.reach);
 

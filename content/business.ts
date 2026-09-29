@@ -7,7 +7,7 @@
 export const businessHero = {
   eyebrow: "Business",
   title: "Buy the stock. Meet the order.",
-  lede: "Credit for entrepreneurs, traders, and small firms. Stock, an order, an invoice, or savings kept apart from a loan. Rates and limits are published when confirmed.",
+  lede: "Credit for entrepreneurs, traders, and small firms. Stock, an order, an invoice, or savings kept apart from a loan.",
 };
 
 export const businessAudiences = [
@@ -29,17 +29,17 @@ export const businessScenarios = [
     title: "The order is signed. The goods are not in yet",
     text: "A local purchase order is already held. LPO finance is for carrying it out. The order belongs in the file.",
     action: "LPO finance",
-    href: "/loans/lpo-finance",
+    href: "/loans/lpo",
   },
   {
     title: "The work is billed. The client has not paid",
     text: "An invoice is already raised. Invoice discounting is cash while that invoice is still outstanding.",
     action: "Invoice discounting",
-    href: "/loans/invoice-discounting",
+    href: "/loans/invoice",
   },
   {
     title: "A machine or a vehicle",
-    text: "Asset financing can be raised with the office. The cost and the rules are to be published.",
+    text: "Asset financing can be raised with the office.",
     action: "Asset financing",
     href: "#asset-financing",
   },
@@ -57,8 +57,8 @@ export const businessFacilities = [
     name: "Working capital",
     summary: "Stock, overheads, or the gap between buying and selling.",
     detail:
-      "For a firm that is already trading. This use sits on the business loan. Interest, limits, and fees are to be published.",
-    href: "/loans/business-loan",
+      "For a firm that is already trading. This use sits on the business loan.",
+    href: "/loans/business",
     action: "The business loan",
   },
   {
@@ -66,8 +66,8 @@ export const businessFacilities = [
     name: "Business loans",
     summary: "A facility for a registered business that is already trading.",
     detail:
-      "The loan names working capital as its purpose. Who qualifies, and on what terms, is published on the loan page when it is confirmed.",
-    href: "/loans/business-loan",
+      "The loan names working capital as its purpose. The amount, the term, and the cost are written into the facility letter.",
+    href: "/loans/business",
     action: "Read the loan",
   },
   {
@@ -75,7 +75,7 @@ export const businessFacilities = [
     name: "Asset financing",
     summary: "A machine, a vehicle, or another asset the work depends on.",
     detail:
-      "The facility is named so a firm can ask. Amount, term, interest, and eligibility are to be published. There is no loan page for it yet.",
+      "The facility is named so a firm can ask the office. There is no separate loan page for it.",
     href: "/contact",
     action: "Ask the office",
   },
@@ -84,10 +84,10 @@ export const businessFacilities = [
     name: "Invoice and LPO financing",
     summary: "Cash against an order you hold, or an invoice you have already raised.",
     detail:
-      "LPO finance follows a local purchase order. Invoice discounting follows an unpaid invoice. The paper that defines the facility belongs in the file. The rest of each list is to be published.",
-    href: "/loans/lpo-finance",
+      "LPO finance follows a local purchase order. Invoice discounting follows an unpaid invoice. That paper belongs in the file.",
+    href: "/loans/lpo",
     action: "LPO finance",
-    secondaryHref: "/loans/invoice-discounting",
+    secondaryHref: "/loans/invoice",
     secondaryAction: "Invoice discounting",
   },
   {
@@ -95,7 +95,7 @@ export const businessFacilities = [
     name: "Business savings",
     summary: "A place to keep money, kept apart from a loan.",
     detail:
-      "It does not use the loan form. The rate, the minimum, and how a withdrawal works are to be published.",
+      "It does not use the loan form. The office opens the account.",
     href: "/savings",
     action: "Savings",
   },
@@ -104,8 +104,8 @@ export const businessFacilities = [
     name: "Other business services",
     summary: "A payroll scheme for staff, arranged with the employer.",
     detail:
-      "That is the service that can be named today. Anything further is to be published, not implied.",
-    href: "/loans/payroll-finance",
+      "A payroll scheme for staff, arranged with the employer.",
+    href: "/loans/payroll",
     action: "Payroll finance",
   },
 ];
@@ -125,7 +125,7 @@ export const businessChallenges = [
   },
   {
     title: "The machine is hired, or missing",
-    text: "A machine or a vehicle the work depends on. Whether it can be financed here is not published yet.",
+    text: "A machine or a vehicle the work depends on. Ask the office.",
   },
   {
     title: "Money to keep, and money to borrow",
@@ -137,21 +137,21 @@ export const businessSolutions = [
   {
     challenge: "Stock and the gap in the cycle",
     response: "Working capital, on the business loan.",
-    href: "/loans/business-loan",
+    href: "/loans/business",
   },
   {
     challenge: "A local purchase order already held",
     response: "LPO finance. The order is the reason.",
-    href: "/loans/lpo-finance",
+    href: "/loans/lpo",
   },
   {
     challenge: "An invoice already raised",
     response: "Invoice discounting, while it is unpaid.",
-    href: "/loans/invoice-discounting",
+    href: "/loans/invoice",
   },
   {
     challenge: "An asset the work needs",
-    response: "Ask the office. The terms are to be published.",
+    response: "Ask the office.",
     href: "/contact",
   },
   {
@@ -166,7 +166,6 @@ export const businessBenefits = [
   "An order or an invoice is named on its own loan.",
   "Savings is separate from credit.",
   "A person decides. This page does not approve an application.",
-  "Interest, limits, and fees: to be published.",
 ];
 
 export const businessSteps = [
@@ -180,7 +179,7 @@ export const businessSteps = [
   },
   {
     title: "Papers",
-    text: "What that facility lists, once the list is published. An order or an invoice stays with its own file.",
+    text: "An order or an invoice stays with its own file.",
   },
   {
     title: "A person replies",
@@ -202,12 +201,12 @@ export const businessFaqs = [
   {
     question: "Do you finance equipment or vehicles?",
     answer:
-      "Asset financing can be raised with the office. The amount, the term, the cost, and the rules are to be published. There is no loan page for it yet.",
+      "Asset financing is arranged with the office. There is no separate loan page for it. The amount, the term, and the cost are written with the office.",
   },
   {
     question: "Can the business save without taking a loan?",
     answer:
-      "Yes. Savings is kept apart from credit and does not use the loan form. The terms are not published yet. Write to the office.",
+      "Yes. Savings is kept apart from credit and does not use the loan form. Write to the office.",
   },
   {
     question: "What else can an employer ask for?",
@@ -217,6 +216,6 @@ export const businessFaqs = [
   {
     question: "Where are the rates, limits, and fees?",
     answer:
-      "They are not on this page. Each published loan will show them when the figures are confirmed.",
+      "They are written into the facility letter. They are not set on this page.",
   },
 ];

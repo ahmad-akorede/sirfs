@@ -84,13 +84,14 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper">
-      <Container width="wide" className="flex h-[4.5rem] items-center justify-between gap-8">
+    <header className="sticky top-0 z-40 border-b border-line bg-white">
+      <Container width="wide" className="flex h-20 items-center justify-between gap-6">
         <Link
           href="/"
-          className="flex h-11 max-w-[10.5rem] shrink-0 items-center font-sans text-[0.9375rem] leading-[1.15] font-semibold tracking-[-0.02em] text-olive"
+          aria-label={site.name}
+          className="flex h-11 shrink-0 items-center font-sans text-[1.35rem] leading-none font-bold tracking-[-0.03em] text-olive"
         >
-          {site.name}
+          Sirfa
         </Link>
 
         <nav className="hidden items-center gap-x-4 xl:gap-x-6 lg:flex" aria-label="Primary">
@@ -116,7 +117,7 @@ export function SiteHeader() {
                   aria-expanded={item.children ? open : undefined}
                   aria-controls={item.children ? `nav-${item.label.toLowerCase()}` : undefined}
                   className={cn(
-                    "nav-mark inline-flex h-11 items-center font-sans text-[0.8125rem] font-medium whitespace-nowrap",
+                    "nav-mark inline-flex h-11 items-center font-sans text-[0.9375rem] font-medium whitespace-nowrap",
                     active ? "text-olive" : "text-ink-soft hover:text-ink",
                   )}
                   onFocus={() => {
@@ -130,7 +131,7 @@ export function SiteHeader() {
                   <div
                     id={`nav-${item.label.toLowerCase()}`}
                     hidden={open ? undefined : true}
-                    className="panel-in absolute top-full left-0 z-50 w-80 pt-3"
+                    className="panel-in absolute top-full left-0 z-50 w-[22rem] pt-3"
                   >
                     <ul className="border border-line bg-paper px-5">
                       {item.children.map((child) => (
@@ -162,7 +163,7 @@ export function SiteHeader() {
           ) : null}
           <Link
             href="/contact"
-            className="font-sans text-[0.8125rem] font-medium text-ink-soft hover:text-ink"
+            className="font-sans text-[0.9375rem] font-medium text-ink-soft hover:text-ink"
           >
             Contact Us
           </Link>
@@ -192,13 +193,14 @@ export function SiteHeader() {
           className="site-menu menu-in flex flex-col"
           onKeyDown={trapMenuTab}
         >
-          <Container width="wide" className="flex h-[4.5rem] items-center justify-between">
+          <Container width="wide" className="flex h-20 items-center justify-between">
             <Link
               href="/"
+              aria-label={site.name}
               onClick={() => closeMenu("navigate")}
-              className="max-w-[16rem] font-sans text-[1.05rem] leading-tight font-semibold tracking-[-0.02em]"
+              className="font-sans text-[1.35rem] leading-none font-bold tracking-[-0.03em]"
             >
-              {site.name}
+              Sirfa
             </Link>
             <button
               type="button"

@@ -37,7 +37,7 @@ export const savingsTrust = [
 
 export const savingsComparison = {
   intro:
-    "Two kinds of money. This is not shares, and it is not a fund, unless a product below says so. None does yet. The table is not a savings contract.",
+    "Savings is money you keep. A deposit is money you leave for a stated time. Neither is a loan.",
   columns: [
     { key: "savings" as const, title: "Savings" },
     { key: "deposit" as const, title: "Deposit" },
@@ -111,16 +111,14 @@ export const keptMoney: KeptMoneyProduct[] = [
 
 export const savingsBenefits = [
   "It is not a loan, and it does not use the loan form.",
-  "A return is shown only when the institution confirms the figure.",
-  "A missing term is marked “To be published”.",
   "The office opens the account. This page does not.",
 ];
 
 export const savingsSteps = [
   { title: "Choose", text: "Savings you keep, or a deposit you set aside." },
   { title: "Write", text: "The office, not the loan application." },
-  { title: "The real terms", text: "Amount, time, and return, once they are confirmed." },
-  { title: "The record", text: "What you agree is written down with the office. This page is not that record." },
+  { title: "The agreement", text: "Amount, time, and return are written down with the office." },
+  { title: "The record", text: "What you agree is the record. This page is not that record." },
 ];
 
 export const savingsFaqs = [
@@ -132,21 +130,21 @@ export const savingsFaqs = [
   {
     question: "Where is the interest, or the return?",
     answer:
-      "It is not on this page. The line stays “To be published” until the institution confirms the figure.",
+      "It is agreed with the office and written down. It is not printed on this page.",
   },
   {
     question: "What is the difference between savings and a deposit?",
     answer:
-      "Savings is money you keep. A deposit is money you leave for a stated time. How long, and what happens if you need it early, are to be published for each product.",
+      "Savings is money you keep. A deposit is money you leave for a stated time. The office writes the time and the return.",
   },
   {
     question: "Can I take money out?",
     answer:
-      "The rule for taking money out has not been published. It will be written on the product when it is confirmed.",
+      "The office writes the rule for taking money out. It is not printed on this page.",
   },
   {
     question: "Is there a smallest amount?",
-    answer: "Not published yet.",
+    answer: "The office writes the smallest amount. It is not printed on this page.",
   },
   {
     question: "How do I begin?",

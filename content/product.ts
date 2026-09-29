@@ -75,31 +75,27 @@ export const unpublishedTerms = (): ProductFact[] =>
   loanDisclosure.map(({ label, value }) => ({ label, value }));
 
 export const applicationProcess: ProductStep[] = [
-  { title: "Choose", text: "Confirm this is the loan for the need." },
-  { title: "Apply", text: "Your name, the amount, and the reason." },
-  { title: "Papers", text: "What this loan lists, once that list is published." },
-  { title: "Decision", text: "A person replies. This page does not approve the application." },
+  { title: "Choose this facility", text: "Confirm the loan matches the need." },
+  { title: "Submit your application", text: "Your name, the amount, and the reason." },
+  { title: "Complete verification", text: "The papers named for this facility." },
+  { title: "Receive a decision", text: "A person reviews the file and writes the outcome." },
 ];
 
 export const defaultProductFaqs: ProductFaq[] = [
   {
     question: "Where are the amount, the term, and the cost?",
-    answer:
-      "They are marked “To be published” on this page, until the figures are confirmed.",
+    answer: "They are written into the facility letter. They are not set on this page.",
   },
   {
     question: "Does the description mean I qualify?",
-    answer:
-      "No. Who it is for is a guide. Eligibility is published only when the rules are confirmed.",
+    answer: "No. Who it is for is a guide. A person decides after the file is reviewed.",
   },
   {
     question: "What should I prepare?",
-    answer:
-      "Only the requirements listed for this loan. A line that says “To be published” has not been named yet.",
+    answer: "The papers named for this facility. An order or an invoice stays with its own loan.",
   },
   {
     question: "How do I begin?",
-    answer:
-      "Use the apply button on this page. The form records an enquiry. It does not approve the application.",
+    answer: "Use Apply on this page. The form records an enquiry. It does not approve the loan.",
   },
 ];

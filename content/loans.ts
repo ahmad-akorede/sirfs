@@ -31,8 +31,6 @@ type LoanDraft = Pick<
 > &
   Partial<Omit<Loan, "slug">>;
 
-const eligibilityPlaceholder = ["To be published."];
-
 function defineLoan(product: LoanDraft): Loan {
   const requirements = product.requirements;
   const facts: ProductFact[] = product.facts ?? [
@@ -45,7 +43,7 @@ function defineLoan(product: LoanDraft): Loan {
   return {
     eyebrow: "Loans",
     labels: loanLabels,
-    eligibility: eligibilityPlaceholder,
+    eligibility: [],
     range: unpublishedTerms(),
     process: applicationProcess,
     faqs: defaultProductFaqs,
@@ -66,7 +64,7 @@ function defineLoan(product: LoanDraft): Loan {
 
 export const loans: Loan[] = [
   defineLoan({
-    slug: "personal-loan",
+    slug: "personal",
     name: "Personal loan",
     audience: "Salary earners",
     summary: "For rent, school fees, a medical bill, or another personal cost, repaid from salary.",
@@ -82,7 +80,7 @@ export const loans: Loan[] = [
     repayment: "Repaid from salary. The schedule and the cost are to be published.",
   }),
   defineLoan({
-    slug: "business-loan",
+    slug: "business",
     name: "Business loan",
     audience: "Registered businesses",
     summary: "Working capital for a business that is already trading.",
@@ -98,7 +96,7 @@ export const loans: Loan[] = [
     repayment: "How the facility is repaid is to be published.",
   }),
   defineLoan({
-    slug: "lpo-finance",
+    slug: "lpo",
     name: "LPO finance",
     audience: "Purchase orders",
     summary: "Funding to execute a local purchase order you already hold.",
@@ -117,7 +115,7 @@ export const loans: Loan[] = [
     repayment: "Tied to the order. The schedule and the cost are to be published.",
   }),
   defineLoan({
-    slug: "invoice-discounting",
+    slug: "invoice",
     name: "Invoice discounting",
     audience: "Unpaid invoices",
     summary: "Working capital while a raised invoice is still outstanding.",
@@ -136,7 +134,7 @@ export const loans: Loan[] = [
     repayment: "Tied to the invoice. The schedule and the cost are to be published.",
   }),
   defineLoan({
-    slug: "payroll-finance",
+    slug: "payroll",
     name: "Payroll finance",
     audience: "Employer schemes",
     summary: "A staff facility arranged with the employer.",

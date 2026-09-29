@@ -25,7 +25,7 @@ export const metadata = pageMetadata({
 
 const firstAnswers = [
   { href: "#catalogue", label: "Available", value: "Five facilities" },
-  { href: "#eligibility", label: "Who qualifies", value: "To be published" },
+  { href: "#eligibility", label: "Who qualifies", value: "Named on each loan" },
   { href: "#how-to-apply", label: "The process", value: "Four steps" },
   { href: "#documents", label: "To apply", value: "Papers, per loan" },
 ];
